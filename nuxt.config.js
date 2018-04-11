@@ -58,6 +58,10 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
+
+      if (isClient) {
+        config.entry.vendor.push("babel-polyfill");
+      }
     }
   }
 };
