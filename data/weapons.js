@@ -200,6 +200,9 @@ export const weapons = [
   })
 ];
 
-export const find = id => data.find(d => d.id === Number(id));
+export const find = id => weapons.find(d => d.id === Number(id));
 
 export const elementsFind = id => elements.find(d => d.id === Number(id));
+
+export const augmentEquipmentsFind = id =>
+  augmentEquipments.find(d => d.id === Number(id));

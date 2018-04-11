@@ -11,14 +11,14 @@
       </div>
 
       <div class="row">
-        <div v-for="weaponSet in weaponSets" :key="weaponSet.id" class="col-md-6 col-12">
+        <div v-for="weaponSet in weaponSetList.setList" :key="weaponSet.id" class="col-md-6 col-12">
           <Form :weapon-set.sync="weaponSet" @copy="onCopy" @reset="onReset" />
         </div>
       </div>
 
       <div class="row">
         <div class="col">
-          <Result :weapon-sets="availableSets" />
+          <Result :weapon-sets="weaponSetList.convert()" />
         </div>
       </div>
     </div>
@@ -26,13 +26,10 @@
 </template>
 
 <script>
-import lodash from "lodash";
-import * as itemData from "~/data/items";
+import WeaponSetList from "~/lib/weapon-set";
 
 import Form from "~/components/Form";
 import Result from "~/components/Result";
-
-const c = obj => Object.values(obj).filter(o => !!o);
 
 export default {
   head: {
@@ -48,53 +45,29 @@ export default {
 
   data() {
     return {
-      weaponSets: [this.initialData(1), this.initialData(2)]
+      weaponSetList: new WeaponSetList(this.$route.query)
     };
   },
 
-  computed: {
-    availableSets() {
-      return (
-        this.weaponSets.filter(s => s.weapon.id).map(s => {
-          return {
-            id: s.id,
-            weapon: s.weapon,
-            augmentEquipments: c(s.augmentEquipments),
-            skills: c(s.skills),
-            items: c(s.items)
-          };
-        }) || []
-      );
+  watch: {
+    weaponSetList: {
+      handler: "onUpdate",
+      deep: true
     }
   },
 
   methods: {
-    initialData(id) {
-      return {
-        id,
-        weapon: {},
-        augmentEquipments: {},
-        skills: {},
-        items: { 1: itemData.find(103) }
-      };
+    onUpdate(val) {
+      this.$router.push({ path: "/", query: this.weaponSetList.toQuery() });
     },
 
-    update(id, weaponSet) {
-      this.weaponSets.splice(
-        this.weaponSets.findIndex(s => s.id === id),
-        1,
-        weaponSet
-      );
-    },
-
-    onCopy(id) {
-      const fromId = id === 1 ? 2 : 1;
-      const from = lodash.cloneDeep(this.weaponSets.find(s => s.id === fromId));
-      this.update(id, { ...from, id: id });
+    onCopy(toId) {
+      const fromId = toId === 1 ? 2 : 1;
+      this.weaponSetList.copy(fromId, toId);
     },
 
     onReset(id) {
-      this.update(id, this.initialData(id));
+      this.weaponSetList.initialize(id);
     }
   }
 };
