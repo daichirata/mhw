@@ -3,7 +3,7 @@
     <div class="col-md-3 col-12 mt-1 mb-1">
       <select v-model="mutableWeapon" class="form-control form-control-sm" :class="{'is-invalid': !!mutableWeapon.id}">
         <option :value="{}">武器</option>
-        <option v-for="weapon in weaponData.data" :key="weapon.id" :value="weapon">
+        <option v-for="weapon in weaponData.weapons" :key="weapon.id" :value="weapon">
           {{ weapon.name }}
         </option>
       </select>

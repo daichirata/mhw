@@ -142,7 +142,7 @@ export const augmentEquipments = [
   }
 ];
 
-export const data = [
+export const weapons = [
   new Weapon({
     id: 1,
     name: "滅鬼の凶器",
@@ -201,8 +201,5 @@ export const data = [
 ];
 
 export const find = id => data.find(d => d.id === Number(id));
-
-export const findAugmentEquipments = id =>
-  augmentEquipments.find(a => a.id === Number(id));
 
 export const elementsFind = id => elements.find(d => d.id === Number(id));

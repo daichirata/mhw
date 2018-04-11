@@ -29,8 +29,6 @@
 </template>
 
 <script>
-import * as itemData from "~/data/items";
-
 import WeaponForm from "~/components/WeaponForm";
 import SkillForm from "~/components/SkillForm";
 import ItemForm from "~/components/ItemForm";
