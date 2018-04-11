@@ -29,6 +29,15 @@ module.exports = {
 
   plugins: ["~plugins/vue-fontawesome"],
 
+  modules: [
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-117355182-1"
+      }
+    ]
+  ],
+
   /*
   ** Customize the progress bar color
   */
