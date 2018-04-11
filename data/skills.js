@@ -1,6 +1,6 @@
 export class Skill {
-  constructor({ id, typeId, level, value1, value2 = 0 }) {
-    Object.assign(this, { id, typeId, level, value1, value2 });
+  constructor({ id, typeId, level, anyName = "", value1, value2 = 0 }) {
+    Object.assign(this, { id, typeId, level, anyName, value1, value2 });
   }
 
   get type() {
@@ -12,6 +12,9 @@ export class Skill {
   }
 
   get fullName() {
+    if (this.anyName !== "") {
+      return `${this.name}${this.anyName}`;
+    }
     return `${this.name}Lv${this.level}`;
   }
 }
@@ -68,6 +71,7 @@ export const data = [
   new Skill({ id: 403, typeId: 4, level: 3, value1: 1.15 }),
   new Skill({ id: 404, typeId: 4, level: 4, value1: 1.2 }),
   new Skill({ id: 405, typeId: 4, level: 5, value1: 1.3 }),
+  new Skill({ id: 406, typeId: 4, level: 6, value1: 1.35, anyName: "(猫)" }),
 
   // 挑戦者
   new Skill({ id: 501, typeId: 5, level: 1, value1: 4, value2: 3 }),

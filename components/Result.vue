@@ -1,6 +1,6 @@
 <template>
   <div v-if="weaponSets.length !== 0" >
-    <div class="box-shadow bg-white p-3 my-3">
+    <div class="box-shadow bg-white p-3 mt-3">
       <dl class="row my-2">
         <template v-for="weaponSet in weaponSets">
           <dt :key="`1_${weaponSet.id}`" class="col-md-2">装備セット{{ weaponSet.id }}</dt>

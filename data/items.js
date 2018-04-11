@@ -31,10 +31,14 @@ export const type = [
   },
   {
     id: 6,
-    name: "達人の煙筒"
+    name: "猫スキル"
   },
   {
     id: 7,
+    name: "達人の煙筒"
+  },
+  {
+    id: 8,
     name: "回避の装衣"
   }
 ];
@@ -61,9 +65,11 @@ export const data = [
   new Item({ id: 502, typeId: 5, name: "攻撃力UP【中】", attack: 10 }),
   new Item({ id: 503, typeId: 5, name: "攻撃力UP【大】", attack: 15 }),
 
-  new Item({ id: 601, typeId: 6, name: "達人の煙筒(50)", affinity: 50 }),
+  new Item({ id: 601, typeId: 6, name: "猫の短期催眠術(9)", attack: 9 }),
 
-  new Item({ id: 701, typeId: 7, name: "回避の装衣(50)", attack: 50 })
+  new Item({ id: 701, typeId: 7, name: "達人の煙筒(50)", affinity: 50 }),
+
+  new Item({ id: 801, typeId: 8, name: "回避の装衣(50)", attack: 50 })
 ];
 
 export const find = id => data.find(d => d.id === Number(id));

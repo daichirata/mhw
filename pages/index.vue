@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container my-3">
       <div class="row">
         <div class="col">
-          <div class="d-flex align-items-center p-3 my-3 bg-purple rounded text-white">
+          <div class="d-flex align-items-center p-3 mb-3 bg-purple rounded text-white">
             <div class="logo rounded border border-white mr-3">肩</div>
             <h6 class="mb-0 text-white lh-100">MHW 大剣シミュレーター</h6>
           </div>

@@ -1,9 +1,9 @@
 <template>
   <div class="form-row align-items-center">
-    <div v-for="i in 7" :key="i" class="col-md-3 col-6 mt-1 mb-1">
-      <select v-model="mutableItems[i]" class="form-control form-control-sm" :class="{'is-invalid': !!mutableItems[i]}">
-        <option :value="undefined">{{ itemData.findType(i).name }}</option>
-        <option v-for="item in itemData.filterTypeId(i)" :key="item.id" :value="item">{{ item.name }}</option>
+    <div v-for="type in itemData.type" :key="type.id" class="col-md-3 col-6 mt-1 mb-1">
+      <select v-model="mutableItems[type.id]" class="form-control form-control-sm" :class="{'is-invalid': !!mutableItems[type.id]}">
+        <option :value="undefined">{{ type.name }}</option>
+        <option v-for="item in itemData.filterTypeId(type.id)" :key="item.id" :value="item">{{ item.name }}</option>
       </select>
     </div>
   </div>
