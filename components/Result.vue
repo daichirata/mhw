@@ -16,7 +16,7 @@
                 <tr class="result-font">
                   <th class="align-middle result-font-sm" style="width: 200px;">
                     <div class="form-row align-items-center">
-                      <input v-model="filter" type="text" class="form-control result-search-input" placeholder="モーション (値)">
+                      <input v-model="filter" type="text" class="form-control result-search-input" placeholder="モーション(値) 検索...">
                     </div>
                   </th>
                   <th v-for="weaponSet in weaponSets" :key="`1_${weaponSet.id}`" class="align-middle result-font-sm" style="width: 110px;">

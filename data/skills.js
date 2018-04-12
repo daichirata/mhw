@@ -55,6 +55,8 @@ export const types = [
   new SkillType({ id: 5, groupId: 2, name: "逆恨み" }),
   new SkillType({ id: 6, groupId: 2, name: "火事場力" }),
   new SkillType({ id: 7, groupId: 2, name: "挑戦者" }),
+  new SkillType({ id: 21, groupId: 2, name: "不屈" }),
+  new SkillType({ id: 22, groupId: 2, name: "飛燕" }),
 
   new SkillType({ id: 8, groupId: 3, name: "超会心" }),
   new SkillType({ id: 9, groupId: 3, name: "弱点特効" }),
@@ -116,6 +118,25 @@ export const skills = [
   new Skill({ id: 73, typeId: 7, level: 3, value1: 12, value2: 9 }),
   new Skill({ id: 74, typeId: 7, level: 4, value1: 16, value2: 12 }),
   new Skill({ id: 75, typeId: 7, level: 5, value1: 20, value2: 15 }),
+
+  // 不屈
+  new Skill({
+    id: 211,
+    typeId: 21,
+    level: 1,
+    value1: 1.1,
+    anyName: "Lv1 (1乙)"
+  }),
+  new Skill({
+    id: 212,
+    typeId: 21,
+    level: 1,
+    value1: 1.2,
+    anyName: "Lv1 (2乙)"
+  }),
+
+  // 飛燕
+  new Skill({ id: 221, typeId: 22, level: 1, value1: 1.1 }),
 
   // 超会心
   new Skill({ id: 81, typeId: 8, level: 1, value1: 1.3 }),

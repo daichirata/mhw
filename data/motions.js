@@ -6,7 +6,8 @@ export class MotionSet {
     elementalMultiplier1 = 1,
     value2 = 0,
     elementalMultiplier2 = 1,
-    drawAttack = false
+    drawAttack = false,
+    jumpingAttack = false
   }) {
     this.name = name;
 
@@ -16,14 +17,16 @@ export class MotionSet {
       this.motions.push({
         value: value1,
         elementalMultiplier: elementalMultiplier1,
-        drawAttack
+        drawAttack,
+        jumpingAttack
       });
     }
     if (value2 !== 0) {
       this.motions.push({
         value: value2,
         elementalMultiplier: elementalMultiplier2,
-        drawAttack
+        drawAttack,
+        jumpingAttack
       });
     }
   }
@@ -50,64 +53,64 @@ export const data = [
 
   new MotionSet({
     id: 4,
-    name: "抜刀溜め斬り0",
-    value1: 48,
-    drawAttack: true
-  }),
-  new MotionSet({
-    id: 5,
-    name: "抜刀溜め斬り1",
-    value1: 77,
-    elementalMultiplier1: 1.1,
-    drawAttack: true
-  }),
-  new MotionSet({
-    id: 6,
-    name: "抜刀溜め斬り2",
-    value1: 105,
-    elementalMultiplier1: 1.2,
-    drawAttack: true
-  }),
-
-  new MotionSet({
-    id: 7,
     name: "強溜め斬り0",
     value1: 65,
     elementalMultiplier1: 1.1
   }),
   new MotionSet({
-    id: 8,
+    id: 5,
     name: "強溜め斬り1",
     value1: 90,
     elementalMultiplier1: 1.15
   }),
   new MotionSet({
-    id: 9,
+    id: 6,
     name: "強溜め斬り2",
     value1: 115,
     elementalMultiplier1: 1.2
   }),
 
   new MotionSet({
-    id: 10,
+    id: 7,
     name: "真・溜め斬り0",
     value1: 15,
     value2: 165,
     elementalMultiplier2: 1.3
   }),
   new MotionSet({
-    id: 11,
+    id: 8,
     name: "真・溜め斬り1",
     value1: 20,
     value2: 182,
     elementalMultiplier2: 1.4
   }),
   new MotionSet({
-    id: 12,
+    id: 9,
     name: "真・溜め斬り2",
     value1: 22,
     value2: 211,
     elementalMultiplier2: 1.5
+  }),
+
+  new MotionSet({
+    id: 10,
+    name: "抜刀溜め斬り0",
+    value1: 48,
+    drawAttack: true
+  }),
+  new MotionSet({
+    id: 11,
+    name: "抜刀溜め斬り1",
+    value1: 77,
+    elementalMultiplier1: 1.1,
+    drawAttack: true
+  }),
+  new MotionSet({
+    id: 12,
+    name: "抜刀溜め斬り2",
+    value1: 105,
+    elementalMultiplier1: 1.2,
+    drawAttack: true
   }),
 
   new MotionSet({
@@ -131,18 +134,65 @@ export const data = [
 
   new MotionSet({
     id: 16,
+    name: "ジャンプ溜め斬り0",
+    value1: 70,
+    elementalMultiplier1: 1,
+    jumpingAttack: true
+  }),
+  new MotionSet({
+    id: 17,
+    name: "ジャンプ溜め斬り1",
+    value1: 92,
+    elementalMultiplier1: 1.1,
+    jumpingAttack: true
+  }),
+  new MotionSet({
+    id: 18,
+    name: "ジャンプ溜め斬り2",
+    value1: 106,
+    elementalMultiplier1: 1.2,
+    jumpingAttack: true
+  }),
+
+  new MotionSet({
+    id: 19,
+    name: "抜刀ジャンプ溜め斬り0",
+    value1: 70,
+    elementalMultiplier1: 1,
+    jumpingAttack: true,
+    drawAttack: true
+  }),
+  new MotionSet({
+    id: 20,
+    name: "抜刀ジャンプ溜め斬り1",
+    value1: 92,
+    elementalMultiplier1: 1.1,
+    jumpingAttack: true,
+    drawAttack: true
+  }),
+  new MotionSet({
+    id: 21,
+    name: "抜刀ジャンプ溜め斬り2",
+    value1: 106,
+    elementalMultiplier1: 1.2,
+    jumpingAttack: true,
+    drawAttack: true
+  }),
+
+  new MotionSet({
+    id: 22,
     name: "タックル0",
     value1: 26,
     elementalMultiplier1: 0
   }),
   new MotionSet({
-    id: 17,
+    id: 23,
     name: "タックル1",
     value1: 35,
     elementalMultiplier1: 0
   }),
   new MotionSet({
-    id: 18,
+    id: 24,
     name: "タックル2",
     value1: 48,
     elementalMultiplier1: 0

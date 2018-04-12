@@ -49,7 +49,7 @@ export default {
 
   data() {
     return {
-      mutableWeaponSet: this.weaponSet
+      mutableWeaponSet: Object.assign({}, this.weaponSet)
     };
   },
 
@@ -59,7 +59,7 @@ export default {
     },
 
     mutableWeaponSet: {
-      handler(value) {
+      handler: function(value) {
         this.onChange(value);
       },
       deep: true

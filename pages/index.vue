@@ -11,8 +11,11 @@
       </div>
 
       <div class="row">
-        <div v-for="weaponSet in weaponSetList.setList" :key="weaponSet.id" class="col-lg-6 col-12">
-          <Form :weapon-set.sync="weaponSet" @copy="onCopy" @reset="onReset" />
+        <div class="col-lg-6 col-12">
+          <Form :weapon-set.sync="weaponSetList.setList[0]" @copy="onCopy" @reset="onReset" />
+        </div>
+        <div class="col-lg-6 col-12">
+          <Form :weapon-set.sync="weaponSetList.setList[1]" @copy="onCopy" @reset="onReset" />
         </div>
       </div>
 
@@ -57,7 +60,7 @@ export default {
   },
 
   methods: {
-    onUpdate(val) {
+    onUpdate(val, val2) {
       this.$router.push({ path: "/", query: this.weaponSetList.toQuery() });
     },
 
