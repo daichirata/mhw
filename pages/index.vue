@@ -11,7 +11,7 @@
       </div>
 
       <div class="row">
-        <div v-for="weaponSet in weaponSetList.setList" :key="weaponSet.id" class="col-md-6 col-12">
+        <div v-for="weaponSet in weaponSetList.setList" :key="weaponSet.id" class="col-lg-6 col-12">
           <Form :weapon-set.sync="weaponSet" @copy="onCopy" @reset="onReset" />
         </div>
       </div>

@@ -1,7 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 
-table { table-layout: fixed; }
- table th, table td { overflow: hidden; }
+table
+{
+    table-layout: fixed;
+}
+table th,
+table td
+{
+    overflow: hidden;
+}
 
 .logo
 {
@@ -76,7 +83,25 @@ table { table-layout: fixed; }
 }
 .css-tooltip-position
 {
-  top: -5px;
-  bottom:auto;
-  right: 128%;
+    top: -5px;
+    right: 128%;
+    bottom: auto;
+}
+
+
+@include media-breakpoint-down(lg)
+{
+    .result-search-input
+    {
+        padding: 0 .25rem 0 .25rem !important;
+    }
+    .result-font
+    {
+        font-size: 14px;
+    }
+
+    .result-font-sm
+    {
+        font-size: 12px;
+    }
 }

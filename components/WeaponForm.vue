@@ -1,7 +1,7 @@
 <template>
   <div class="form-row">
     <div class="col-md-3 col-12 mt-1 mb-1">
-      <select v-model="mutableWeapon" class="form-control form-control-sm" :class="{'is-invalid': !!mutableWeapon.id}">
+      <select v-model="mutableWeapon" class="form-control" :class="{'is-invalid': !!mutableWeapon.id}">
         <option :value="{}">武器</option>
         <option v-for="weapon in weaponData.weapons" :key="weapon.id" :value="weapon">
           {{ weapon.name }}
@@ -10,7 +10,7 @@
     </div>
 
     <div v-for="c in (weapon.aeCount || 0)" :key="c" class="col-md-3 col-4 mt-1 mb-1">
-      <select v-model="mutableAugmentEquipments[c]" class="form-control form-control-sm" :class="{'is-invalid': !!mutableAugmentEquipments[c]}">
+      <select v-model="mutableAugmentEquipments[c]" class="form-control" :class="{'is-invalid': !!mutableAugmentEquipments[c]}">
         <option :value="undefined">カスタム強化{{ c }}</option>
         <option v-for="a in weaponData.augmentEquipments" :key="a.id" :value="a">
           {{ a.name }}

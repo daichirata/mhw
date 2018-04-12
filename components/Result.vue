@@ -1,7 +1,7 @@
 <template>
   <div v-if="weaponSets.length !== 0" >
     <div class="box-shadow bg-white p-3 mt-3">
-      <dl class="row my-2">
+      <dl class="row my-2 result-font">
         <template v-for="weaponSet in weaponSets">
           <dt :key="`1_${weaponSet.id}`" class="col-md-2">装備セット{{ weaponSet.id }}</dt>
           <dd :key="`2_${weaponSet.id}`" class="col-md-10">{{ weaponSetString(weaponSet) }}</dd>
@@ -11,23 +11,27 @@
       <div class="row">
         <div class="col">
           <div class="table-responsive">
-            <table class="table table-sm table-striped table-hover">
+            <table class="table table-striped table-hover result-font">
               <thead>
-                <tr>
-                  <th class="align-middle" style="width: 140px;">
-                    <div class="form-row align-items-center mx-1">
-                      <input v-model="filter" type="email" class="form-control form-control-sm" placeholder="モーション (値)">
+                <tr class="result-font">
+                  <th class="align-middle result-font-sm" style="width: 200px;">
+                    <div class="form-row align-items-center">
+                      <input v-model="filter" type="text" class="form-control result-search-input" placeholder="モーション (値)">
                     </div>
                   </th>
-                  <th v-for="weaponSet in weaponSets" :key="`1_${weaponSet.id}`" style="width: 140px;">装備セット{{ weaponSet.id }}<br />期待値</th>
-                  <th v-for="weaponSet in weaponSets" :key="`2_${weaponSet.id}`" style="width: 140px;">装備セット{{ weaponSet.id }}<br />{{ hitDataSelect === 1 ? '柱' : '' }}ダメージ(会心)</th>
+                  <th v-for="weaponSet in weaponSets" :key="`1_${weaponSet.id}`" class="align-middle result-font-sm" style="width: 110px;">
+                    装備セット{{ weaponSet.id }}<br />期待値
+                  </th>
+                  <th v-for="weaponSet in weaponSets" :key="`2_${weaponSet.id}`" class="align-middle result-font-sm" style="width: 130px;">
+                    装備セット{{ weaponSet.id }}<br />{{ hitDataSelect === 1 ? '柱' : '' }}ダメージ(会心)
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="motionSet in searchedMotionData" :key="motionSet.id">
-                  <td>{{ motionSet.name }} ({{ motionSetString(motionSet) }})</td>
-                  <td v-for="weaponSet in weaponSets" :key="`1_${weaponSet.id}`">{{ expectedValuesString(weaponSet, motionSet) }}</td>
-                  <td v-for="weaponSet in weaponSets" :key="`2_${weaponSet.id}`">{{ realDamagesString(weaponSet, motionSet) }}</td>
+                  <td class="align-middle">{{ motionSet.name }} ({{ motionSetString(motionSet) }})</td>
+                  <td v-for="weaponSet in weaponSets" :key="`1_${weaponSet.id}`" class="align-middle">{{ expectedValuesString(weaponSet, motionSet) }}</td>
+                  <td v-for="weaponSet in weaponSets" :key="`2_${weaponSet.id}`" class="align-middle">{{ realDamagesString(weaponSet, motionSet) }}</td>
                 </tr>
               </tbody>
             </table>

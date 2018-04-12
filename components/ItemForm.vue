@@ -1,7 +1,7 @@
 <template>
   <div class="form-row align-items-center">
     <div v-for="type in types" :key="type.id" class="col-md-3 col-6 mt-1 mb-1">
-      <select v-model="mutableItems[type.id]" class="form-control form-control-sm" :class="{'is-invalid': !!mutableItems[type.id]}">
+      <select v-model="mutableItems[type.id]" class="form-control" :class="{'is-invalid': !!mutableItems[type.id]}">
         <option :value="undefined">{{ type.name }}</option>
         <option v-for="item in type.items" :key="item.id" :value="item">{{ item.name }}</option>
       </select>
